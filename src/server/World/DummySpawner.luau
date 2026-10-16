@@ -1,6 +1,7 @@
 --!strict
 -- Tạo hình nộm tập đánh, hồi sinh sau khi bị hạ.
 
+local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local DummyConfig = require(ReplicatedStorage:WaitForChild("Shared"):WaitForChild("Config"):WaitForChild("DummyConfig"))
@@ -62,14 +63,47 @@ local function buildDummy(): Model
 	return model
 end
 
-local function spawnDummy()
+local function collapse(model: Model)
+	-- Gỡ mối hàn và bỏ khóa để các bộ phận rơi xuống đất.
+	for _, descendant in model:GetDescendants() do
+		if descendant:IsA("WeldConstraint") then
+			descendant:Destroy()
+		elseif descendant:IsA("BasePart") then
+			descendant.Anchored = false
+		end
+	end
+end
+
+local function isSpawnBlocked(): boolean
+	local params = OverlapParams.new()
+	local parts = workspace:GetPartBoundsInRadius(DummyConfig.spawnPosition, DummyConfig.spawnClearRadius, params)
+	for _, part in parts do
+		local model = part:FindFirstAncestorOfClass("Model")
+		if model and Players:GetPlayerFromCharacter(model) then
+			return true
+		end
+	end
+	return false
+end
+
+local spawnDummy: () -> ()
+
+local function respawnWhenClear()
+	while isSpawnBlocked() do
+		task.wait(0.5)
+	end
+	spawnDummy()
+end
+
+function spawnDummy()
 	local model = buildDummy()
 	local humanoid = model:FindFirstChildOfClass("Humanoid") :: Humanoid
 
 	humanoid.Died:Connect(function()
+		collapse(model)
 		task.delay(DummyConfig.respawnDelay, function()
 			model:Destroy()
-			spawnDummy()
+			respawnWhenClear()
 		end)
 	end)
 
