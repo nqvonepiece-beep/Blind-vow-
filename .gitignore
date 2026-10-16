@@ -1,0 +1,29 @@
+# File place của Roblox Studio (có thể rất nặng, không cần lưu)
+*.rbxl
+*.rbxlx
+*.rbxl.lock
+*.rbxlx.lock
+
+# Bản build do Rojo tạo ra
+*.rbxm
+*.rbxmx
+/build/
+
+# Thư viện cài thêm (nếu sau này dùng Wally)
+/Packages/
+/ServerPackages/
+/DevPackages/
+sourcemap.json
+
+# Bí mật và cấu hình cá nhân - KHÔNG BAO GIỜ đưa lên kho công khai
+.env
+*.key
+*.secret
+
+# File tạm của hệ điều hành và trình soạn thảo
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.log
