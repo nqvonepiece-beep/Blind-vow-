@@ -14,6 +14,43 @@
         "$path": "src/server"
       }
     },
+    "Workspace": {
+      "$className": "Workspace",
+      "TrainingFloor": {
+        "$className": "Part",
+        "$properties": {
+          "Anchored": true,
+          "Locked": true,
+          "Size": [128, 2, 128],
+          "CFrame": { "CFrame": { "position": [0, -1, 0], "orientation": [[1, 0, 0], [0, 1, 0], [0, 0, 1]] } },
+          "Material": "Slate",
+          "Color": [0.24, 0.24, 0.26]
+        }
+      },
+      "SpawnLocation": {
+        "$className": "SpawnLocation",
+        "$properties": {
+          "Anchored": true,
+          "Size": [6, 1, 6],
+          "CFrame": { "CFrame": { "position": [0, 0.5, 0], "orientation": [[1, 0, 0], [0, 1, 0], [0, 0, 1]] } },
+          "Material": "Cobblestone",
+          "Color": [0.32, 0.31, 0.3],
+          "Duration": 0
+        }
+      }
+    },
+    "ServerStorage": {
+      "$className": "ServerStorage",
+      "Assets": {
+        "$className": "Folder",
+        "Weapons": {
+          "$className": "Folder",
+          "StarterLongsword": {
+            "$path": "assets/roblox/weapons/StarterLongsword.rbxmx"
+          }
+        }
+      }
+    },
     "StarterPlayer": {
       "$className": "StarterPlayer",
       "StarterPlayerScripts": {
