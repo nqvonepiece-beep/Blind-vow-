@@ -7,6 +7,7 @@ Dự án đang ở giai đoạn prototype đầu tiên: Human + Warrior, một c
 ## Tài liệu
 
 - [Hướng dẫn cài đặt và làm việc hằng ngày](docs/SETUP.md): cài Git và Rojo, chạy thử trong Studio, sao lưu, bảo mật cuối buổi ở máy tiệm net.
+- [Buổi sau làm tiếp từ đâu](docs/NEXT_SESSION.md): việc đang dở, cái gì đã và chưa kiểm tra.
 - [Tài liệu thiết kế (GDD)](docs/GDD.md): cốt truyện, chủng tộc, class, combat, lộ trình.
 - [Luật dự án](CLAUDE.md): cách làm việc và quy tắc kỹ thuật.
 

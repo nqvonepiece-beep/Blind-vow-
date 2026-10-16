@@ -6,6 +6,12 @@
       "$className": "ReplicatedStorage",
       "Shared": {
         "$path": "src/shared"
+      },
+      "Assets": {
+        "$className": "Folder",
+        "Animations": {
+          "$path": "assets/roblox/animations"
+        }
       }
     },
     "ServerScriptService": {
@@ -47,6 +53,9 @@
           "$className": "Folder",
           "StarterLongsword": {
             "$path": "assets/roblox/weapons/StarterLongsword.rbxmx"
+          },
+          "StarterLongswordScabbard": {
+            "$path": "assets/roblox/weapons/StarterLongswordScabbard.rbxmx"
           }
         }
       }
