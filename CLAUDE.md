@@ -1,31 +1,38 @@
 # Blind Vow - Luật dự án
 
-## Bối cảnh
-- Chủ dự án: Vinny, người mới hoàn toàn, chưa biết lập trình.
-- Game Roblox "Blind Vow": RPG hành động thế giới mở, fantasy trung cổ châu Âu pha isekai, combat nhanh và căng, nhân vật chết là mất vĩnh viễn.
-- Vinny chỉ test game ở tiệm net khoảng 3 giờ mỗi ngày bằng Roblox Studio và Rojo. Code làm cùng Claude trong kho này.
-- Thiết kế game: xem `docs/GDD.md`. Hướng dẫn cài đặt: xem `docs/SETUP.md`.
+File này được đọc tự động mỗi lần mở phiên. Thiết kế đầy đủ nằm trong `docs/GDD.md`, hướng dẫn cài đặt trong `docs/SETUP.md`.
 
-## Cách giao tiếp
-- Nói tiếng Việt với Vinny, giải thích ngắn gọn, dễ hiểu, tránh thuật ngữ khó.
-- Code và tên biến viết bằng tiếng Anh. Tài liệu viết bằng tiếng Việt.
+## 1. Về người dùng và cách làm việc
 
-## Luật kỹ thuật
-- Dùng Luau (ưu tiên `--!strict`).
-- Server quyết định mọi kết quả quan trọng: sát thương, parry, cái chết. Không tin dữ liệu từ client.
-- Chia module nhỏ, mỗi module một việc.
-- Thông số vũ khí, quái, kỹ năng đặt trong file config riêng, không ghi cứng rải rác trong code.
-- Lỗi lưu dữ liệu không bao giờ được xóa nhầm nhân vật.
+- Tên: Vinny. Người đi làm, làm game như sở thích, **chưa có kinh nghiệm lập trình, animation hay VFX**. Chỉ biết sơ về Roblox Studio và Blender.
+- **Giao tiếp bằng tiếng Việt**, giải thích ngắn gọn, dễ hiểu, như đang dạy người mới. Code và tên biến viết bằng tiếng Anh; tài liệu viết bằng tiếng Việt.
+- Vinny không có máy tính riêng. Thuê máy tiệm net khoảng 3 giờ mỗi ngày để mở Roblox Studio, cài Rojo và chơi thử. Mọi thứ phải nằm trong kho GitHub, không lưu gì trên máy tiệm net.
+- Vinny cung cấp ý tưởng, ảnh và video tham chiếu. Phần còn lại (code, hệ thống, cấu hình, UI bằng code, VFX bằng code) giao cho Claude Code.
+- Vinny là người quyết định cuối cùng về hướng sáng tạo.
 
-## Quy trình làm việc
-- Mỗi việc một commit rõ ràng.
-- Làm trên nhánh riêng và mở Pull Request.
-- Trước mỗi việc lớn, tóm tắt kế hoạch để Vinny duyệt, chờ Vinny trả lời "ok" rồi mới làm.
-- Cuối mỗi nhiệm vụ, nói rõ: (1) cách test trong Studio, (2) việc nào đã kiểm tra thật, (3) việc nào chưa kiểm tra được. Không được nói đã test nếu chưa chạy.
+### Luật làm việc
+1. Trước mỗi việc lớn, **gửi kế hoạch ngắn và chờ Vinny trả lời "ok"** rồi mới làm.
+2. Mỗi nhiệm vụ nhỏ, một commit rõ ràng, làm trên nhánh riêng và mở Pull Request.
+3. Cuối mỗi nhiệm vụ nói rõ: cách test trong Studio, việc nào đã kiểm tra thật, việc nào chưa kiểm tra được. **Không nói đã test nếu chưa chạy.**
+4. Khi có lỗi, hướng dẫn Vinny dán nguyên văn thông báo lỗi từ cửa sổ Output của Studio.
+5. Server quyết định các kết quả quan trọng (sát thương, parry, cái chết). Không tin dữ liệu từ client.
+6. Chia module nhỏ. Thông số vũ khí, quái, kỹ năng đặt trong file config riêng, không ghi cứng rải rác.
+7. Chỉ dùng tài nguyên có bản quyền hợp lệ. Không sao chép nội dung của game khác (Deepwoken, Rune Slayer...), chỉ lấy cảm hứng.
+8. Ưu tiên một bản nhỏ nhưng chạy được hơn là nhiều tính năng dở dang. Không để hàm trống rồi nói là hoàn thành.
 
-## Bản quyền
-- Không sao chép nội dung của game khác.
-- Chỉ dùng tài nguyên (hình, âm thanh, mô hình) có bản quyền hợp lệ.
+## 2. Tóm tắt game
 
-## Bảo mật
+- **Blind Vow**: RPG hành động thế giới mở trên Roblox, fantasy trung cổ châu Âu pha yếu tố isekai.
+- Combat nhanh và căng kiểu Deepwoken: parry, block, né, stamina, posture.
+- Chết vĩnh viễn. Server quyết định cái chết. Lỗi lưu dữ liệu tạm thời không bao giờ được xóa nhầm nhân vật.
+- Chơi một mình hoặc chơi nhóm.
+- Prototype đầu tiên: chỉ Human + Warrior, một căn phòng, một thanh kiếm, một con quái.
+
+## 3. Kỹ thuật
+
+- Dùng Luau, ưu tiên `--!strict`.
+- Cấu trúc Rojo: `src/server`, `src/client`, `src/shared` (xem `default.project.json`).
+
+## 4. Bảo mật
+
 - Kho này công khai: không đưa mật khẩu, khóa, token hay thông tin cá nhân vào file.
