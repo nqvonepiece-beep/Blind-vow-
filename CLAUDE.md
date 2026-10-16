@@ -11,8 +11,8 @@ File này được đọc tự động mỗi lần mở phiên. Thiết kế đ�
 - Vinny là người quyết định cuối cùng về hướng sáng tạo.
 
 ### Luật làm việc
-1. Trước mỗi việc lớn, **gửi kế hoạch ngắn và chờ Vinny trả lời "ok"** rồi mới làm.
-2. Mỗi nhiệm vụ nhỏ, một commit rõ ràng, làm trên nhánh riêng và mở Pull Request.
+1. **Tự động làm theo lộ trình** trong `docs/GDD.md`, không cần chờ "ok" cho từng bước. Chỉ hỏi Vinny khi cần quyết định sáng tạo (cốt truyện, tên, phong cách) hoặc việc khó hoàn tác. Báo cáo ngắn gọn, bỏ các bước không quan trọng để tiết kiệm token.
+2. Mỗi nhiệm vụ nhỏ, một commit rõ ràng, làm trên nhánh riêng, mở Pull Request. Vinny xác nhận trước khi gộp vào `main`. Rojo đọc từ thư mục trên máy, nên có thể test ngay trên nhánh.
 3. Cuối mỗi nhiệm vụ nói rõ: cách test trong Studio, việc nào đã kiểm tra thật, việc nào chưa kiểm tra được. **Không nói đã test nếu chưa chạy.**
 4. Khi có lỗi, hướng dẫn Vinny dán nguyên văn thông báo lỗi từ cửa sổ Output của Studio.
 5. Server quyết định các kết quả quan trọng (sát thương, parry, cái chết). Không tin dữ liệu từ client.
