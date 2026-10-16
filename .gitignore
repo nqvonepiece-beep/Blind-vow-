@@ -15,6 +15,9 @@
 /DevPackages/
 sourcemap.json
 
+# Chương trình Rojo tải về mỗi buổi ở máy tiệm net, không đưa vào kho
+rojo.exe
+
 # Bí mật và cấu hình cá nhân - KHÔNG BAO GIỜ đưa lên kho công khai
 .env
 *.key
