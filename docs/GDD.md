@@ -94,7 +94,7 @@ Chi tiết thiết kế sau khi prototype combat ổn.
 **Prototype đầu tiên:** chỉ Human + Warrior, một căn phòng, một thanh kiếm, một con quái, đánh nghe sướng tay.
 
 1. Dựng khung dự án (Rojo, GitHub). *(xong)*
-2. Đòn đánh thường, hitbox, thanh máu, một dummy.
+2. Đòn đánh thường, hitbox, thanh máu, một dummy. *(đã viết code và gộp vào `main` qua PR #2; **chờ test trong Roblox Studio**)*
 3. Block, parry, né, stamina.
 4. Quái có AI và đòn báo hiệu.
 5. Lưu dữ liệu nhân vật (cẩn thận với chết vĩnh viễn).
