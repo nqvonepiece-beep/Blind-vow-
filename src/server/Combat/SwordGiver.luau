@@ -3,32 +3,35 @@
 
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local ServerStorage = game:GetService("ServerStorage")
 local StarterPack = game:GetService("StarterPack")
 
 local Shared = ReplicatedStorage:WaitForChild("Shared")
 local WeaponModelConfig = require(Shared:WaitForChild("Config"):WaitForChild("WeaponModelConfig"))
+local WeaponAssets = require(script.Parent:WaitForChild("WeaponAssets"))
 
 -- Phải trùng khóa trong WeaponConfig, combat tìm thông số theo tên Tool.
 local SWORD_NAME = "Sword"
 
 local SwordGiver = {}
 
-local function findModel(modelName: string): Model?
-	local assets = ServerStorage:FindFirstChild("Assets")
-	local weapons = assets and assets:FindFirstChild("Weapons")
-	local model = weapons and weapons:FindFirstChild(modelName)
-	if model and model:IsA("Model") then
-		return model
+-- Tool.Grip từ hướng kiếm trong bàn tay (xem WeaponModelConfig).
+local function buildGrip(config: WeaponModelConfig.WeaponModel): CFrame
+	-- Đổi từ trục bàn tay sang trục RightGripAttachment (xoay -90° quanh X so với bàn tay).
+	local function toAttachment(v: Vector3): Vector3
+		return Vector3.new(v.X, -v.Z, v.Y)
 	end
-	return nil
+	local blade = toAttachment(config.gripBladeDirection).Unit
+	local edge = toAttachment(config.gripEdgeDirection)
+	edge = (edge - blade * edge:Dot(blade)).Unit
+	-- Hướng của Handle so với bàn tay: trục X của kiếm = lưỡi sắc, trục Y = mũi kiếm.
+	local orientation = CFrame.fromMatrix(Vector3.zero, edge, blade)
+	return CFrame.new(config.gripOffset) * orientation:Inverse()
 end
 
 local function buildSword(): Tool?
 	local config = WeaponModelConfig[SWORD_NAME]
-	local source = findModel(config.modelName)
+	local source = WeaponAssets.findModel(config.modelName)
 	if not source then
-		warn(`[SwordGiver] Không tìm thấy ServerStorage.Assets.Weapons.{config.modelName}. Kiểm tra Rojo đã sync assets/roblox/weapons chưa.`)
 		return nil
 	end
 
@@ -45,15 +48,9 @@ local function buildSword(): Tool?
 	tool.RequiresHandle = true
 	tool.CanBeDropped = false
 
-	-- Kiếm chỉ để nhìn: không va chạm, không nặng, không neo, để không cản di chuyển.
-	-- Sát thương do server tính bằng hitbox riêng (CombatService), không dùng va chạm của kiếm.
 	for _, descendant in model:GetDescendants() do
 		if descendant:IsA("BasePart") then
-			descendant.Anchored = false
-			descendant.CanCollide = false
-			descendant.CanTouch = false
-			descendant.CanQuery = false
-			descendant.Massless = true
+			WeaponAssets.makeVisualOnly(descendant)
 			if descendant ~= handle then
 				local weld = Instance.new("WeldConstraint")
 				weld.Part0 = handle
@@ -69,11 +66,7 @@ local function buildSword(): Tool?
 	end
 	model:Destroy()
 
-	-- Tool.Grip: điểm nắm tay và hướng của kiếm so với Handle.
-	local orientation = CFrame.Angles(math.rad(config.gripTiltDegrees), 0, 0)
-		* CFrame.Angles(0, math.rad(config.gripTurnDegrees), 0)
-	tool.Grip = CFrame.new(config.gripOffset) * orientation:Inverse()
-
+	tool.Grip = buildGrip(config)
 	return tool
 end
 

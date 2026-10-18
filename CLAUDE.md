@@ -1,6 +1,6 @@
 # Blind Vow - Luật dự án
 
-File này được đọc tự động mỗi lần mở phiên. Thiết kế đầy đủ nằm trong `docs/GDD.md`, hướng dẫn cài đặt trong `docs/SETUP.md`.
+File này được đọc tự động mỗi lần mở phiên. Thiết kế đầy đủ nằm trong `docs/GDD.md`, hướng dẫn cài đặt trong `docs/SETUP.md`, việc đang dở trong `docs/NEXT_SESSION.md`.
 
 ## 1. Về người dùng và cách làm việc
 

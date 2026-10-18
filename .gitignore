@@ -33,3 +33,6 @@ desktop.ini
 
 # Ngoại lệ: mô hình vũ khí thật của game (Rojo đọc vào ServerStorage), phải lưu trên GitHub
 !/assets/roblox/**/*.rbxmx
+
+# File sao lưu tự động của Blender
+*.blend1

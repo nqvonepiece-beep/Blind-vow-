@@ -1,0 +1,171 @@
+{
+  "animations": {
+    "Sword_CombatIdle": {
+      "fps": 30,
+      "frames": "0-96",
+      "duration_s": 3.2,
+      "loop": true,
+      "priority": "Action",
+      "markers": {},
+      "rbxmx": "assets/roblox/animations/Sword_CombatIdle.rbxmx",
+      "fbx": "assets/roblox/animations_fbx/Sword_CombatIdle.fbx"
+    },
+    "Sword_M1_01": {
+      "fps": 30,
+      "frames": "0-18",
+      "duration_s": 0.6,
+      "loop": false,
+      "priority": "Action2",
+      "markers": {
+        "Hit": {
+          "frame": 5,
+          "time_s": 0.167
+        },
+        "ComboWindow": {
+          "frame": 10,
+          "time_s": 0.333
+        }
+      },
+      "rbxmx": "assets/roblox/animations/Sword_M1_01.rbxmx",
+      "fbx": "assets/roblox/animations_fbx/Sword_M1_01.fbx"
+    },
+    "Sword_M1_02": {
+      "fps": 30,
+      "frames": "0-18",
+      "duration_s": 0.6,
+      "loop": false,
+      "priority": "Action2",
+      "markers": {
+        "Hit": {
+          "frame": 5,
+          "time_s": 0.167
+        },
+        "ComboWindow": {
+          "frame": 10,
+          "time_s": 0.333
+        }
+      },
+      "rbxmx": "assets/roblox/animations/Sword_M1_02.rbxmx",
+      "fbx": "assets/roblox/animations_fbx/Sword_M1_02.fbx"
+    },
+    "Sword_M1_03": {
+      "fps": 30,
+      "frames": "0-18",
+      "duration_s": 0.6,
+      "loop": false,
+      "priority": "Action2",
+      "markers": {
+        "Hit": {
+          "frame": 5,
+          "time_s": 0.167
+        },
+        "ComboWindow": {
+          "frame": 10,
+          "time_s": 0.333
+        }
+      },
+      "rbxmx": "assets/roblox/animations/Sword_M1_03.rbxmx",
+      "fbx": "assets/roblox/animations_fbx/Sword_M1_03.fbx"
+    },
+    "Sword_M1_04": {
+      "fps": 30,
+      "frames": "0-27",
+      "duration_s": 0.9,
+      "loop": false,
+      "priority": "Action2",
+      "markers": {
+        "Hit": {
+          "frame": 6,
+          "time_s": 0.2
+        },
+        "Recover": {
+          "frame": 15,
+          "time_s": 0.5
+        }
+      },
+      "rbxmx": "assets/roblox/animations/Sword_M1_04.rbxmx",
+      "fbx": "assets/roblox/animations_fbx/Sword_M1_04.fbx"
+    }
+  },
+  "checks": [
+    {
+      "name": "Sword_CombatIdle",
+      "issues": [],
+      "stats": {
+        "LeftFoot_lowest_y": -0.033,
+        "LeftFoot_max_slide_per_frame": 0.0,
+        "RightFoot_lowest_y": -0.017,
+        "RightFoot_max_slide_per_frame": 0.0,
+        "tip_lowest_y": 0.099,
+        "max_right_wrist_bend_deg": 0.0,
+        "max_ik_reach_error": 0.0
+      }
+    },
+    {
+      "name": "Sword_M1_01",
+      "issues": [],
+      "stats": {
+        "LeftFoot_lowest_y": -0.033,
+        "LeftFoot_max_slide_per_frame": 0.0002,
+        "RightFoot_lowest_y": -0.017,
+        "RightFoot_max_slide_per_frame": 0.0047,
+        "tip_lowest_y": 0.12,
+        "max_right_wrist_bend_deg": 12.7,
+        "max_ik_reach_error": 0.0154
+      }
+    },
+    {
+      "name": "Sword_M1_02",
+      "issues": [],
+      "stats": {
+        "LeftFoot_lowest_y": -0.033,
+        "LeftFoot_max_slide_per_frame": 0.0002,
+        "RightFoot_lowest_y": -0.017,
+        "RightFoot_max_slide_per_frame": 0.0069,
+        "tip_lowest_y": 1.85,
+        "max_right_wrist_bend_deg": 16.0,
+        "max_ik_reach_error": 0.0142
+      }
+    },
+    {
+      "name": "Sword_M1_03",
+      "issues": [],
+      "stats": {
+        "LeftFoot_lowest_y": -0.033,
+        "LeftFoot_max_slide_per_frame": 0.0002,
+        "RightFoot_lowest_y": -0.017,
+        "RightFoot_max_slide_per_frame": 0.0002,
+        "tip_lowest_y": 0.778,
+        "max_right_wrist_bend_deg": 10.7,
+        "max_ik_reach_error": 0.0004
+      }
+    },
+    {
+      "name": "Sword_M1_04",
+      "issues": [],
+      "stats": {
+        "LeftFoot_lowest_y": -0.033,
+        "LeftFoot_max_slide_per_frame": 0.0002,
+        "RightFoot_lowest_y": -0.017,
+        "RightFoot_max_slide_per_frame": 0.0003,
+        "tip_lowest_y": 0.12,
+        "max_right_wrist_bend_deg": 9.4,
+        "max_ik_reach_error": 0.0004
+      }
+    }
+  ],
+  "continuity_deg": {
+    "Sword_CombatIdle->Sword_M1_01": 0.0,
+    "Sword_M1_01->Sword_M1_02": 0.0,
+    "Sword_M1_02->Sword_M1_03": 0.0,
+    "Sword_M1_03->Sword_M1_04": 0.0,
+    "Sword_M1_04->Sword_CombatIdle": 0.0
+  },
+  "blend": "assets/blender/animations/SwordCombat.blend",
+  "images": [
+    "//../weapons/textures/starter_longsword_basecolor.png",
+    "//../weapons/textures/starter_longsword_metallic.png",
+    "//../weapons/textures/starter_longsword_normal.png",
+    "//../weapons/textures/starter_longsword_roughness.png"
+  ]
+}
