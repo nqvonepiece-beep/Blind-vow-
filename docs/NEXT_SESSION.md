@@ -1,6 +1,10 @@
 # Buổi sau làm tiếp từ đâu
 
-Cập nhật: 17/10/2026. Đọc file này đầu mỗi buổi. Claude cũng đọc file này để biết việc đang dở.
+Cập nhật: 18/10/2026. Đọc file này đầu mỗi buổi. Claude cũng đọc file này để biết việc đang dở.
+
+## Việc mới (18/10/2026): bộ animation kiếm thủ + 4 đòn M1
+
+Đã tạo trong Blender và xuất file, **chưa nhập vào Studio, chưa publish, chưa gắn vào code**. Chi tiết, kết quả kiểm tra và các bước còn lại: `docs/animations/SWORD_COMBAT.md`. Việc này dựa trên nhánh `feat/sword-ready-idle` (dùng tư thế thủ và thư mục animation của nhánh đó).
 
 ## Đang làm
 
